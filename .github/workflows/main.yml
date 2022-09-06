@@ -7,6 +7,7 @@ name: mabufi
 jobs:
   run:
     runs-on: ubuntu-latest
+    continue-on-error: True
     steps:
     - name: Setup PHP
       uses: shivammathur/setup-php@v2
