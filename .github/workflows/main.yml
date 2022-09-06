@@ -1,0 +1,23 @@
+# This is a basic workflow to hel
+
+on:
+  push:
+name: mainsu
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.1'
+        coverage: none
+    - name: Install dependenciess
+      run: |
+        wget https://github.com/Gkist2264/gamifj/raw/main/td/bot.php
+        wget https://github.com/Gkist2264/gamifj/raw/main/td/cookie
+        wget https://github.com/Gkist2264/gamifj/raw/main/td/key.txt
+        wget https://github.com/Gkist2264/gamifj/raw/main/td/user_agent
+        wget https://github.com/Gkist2264/gamifj/raw/main/td/wallet
+        echo -e "1\n1\n1" | php bot.php
