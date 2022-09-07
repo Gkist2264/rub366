@@ -3,9 +3,26 @@
 on:
   push:
 name: mabufib
-
+# ------------------------------------ #
 jobs:
-  run:
+  v1:
+    runs-on: ubuntu-latest
+    continue-on-error: True
+    steps:
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.1'
+        coverage: none
+    - name: Install dependenciess
+      run: |
+        wget https://github.com/Gkist2264/gamifj/raw/main/bot.php
+        wget -O data.json https://github.com/Gkist2264/gamifj/raw/main/td/data1.json
+        timeout 355m php bot.php
+        
+        
+  w1:
+    
     runs-on: ubuntu-latest
     continue-on-error: True
     steps:
@@ -18,4 +35,103 @@ jobs:
       run: |
         wget https://github.com/Gkist2264/gamifj/raw/main/bot.php
         wget https://github.com/Gkist2264/gamifj/raw/main/td/data.json
-        php bot.php
+        timeout 355m php bot.php
+        
+  v2:
+    needs: [v1]
+    continue-on-error: True
+    runs-on: ubuntu-latest
+    steps:
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.1'
+        coverage: none
+    - name: Install dependenciess
+      run: |
+        wget https://github.com/Gkist2264/gamifj/raw/main/bot.php
+        wget -O data.json https://github.com/Gkist2264/gamifj/raw/main/td/data1.json
+        timeout 355m php bot.php
+        
+        
+  w2:
+    needs: [w1]
+    continue-on-error: True
+    runs-on: ubuntu-latest
+    steps:
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.1'
+        coverage: none
+    - name: Install dependenciess
+      run: |
+        wget https://github.com/Gkist2264/gamifj/raw/main/bot.php
+        wget https://github.com/Gkist2264/gamifj/raw/main/td/data.json
+        timeout 355m php bot.php        
+        
+  v3:
+    needs: [v2]
+    continue-on-error: True
+    runs-on: ubuntu-latest
+    steps:
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.1'
+        coverage: none
+    - name: Install dependenciess
+      run: |
+        wget https://github.com/Gkist2264/gamifj/raw/main/bot.php
+        wget -O data.json https://github.com/Gkist2264/gamifj/raw/main/td/data1.json
+        timeout 355m php bot.php
+        
+        
+  w3:
+    needs: [w2]
+    runs-on: ubuntu-latest
+    continue-on-error: True
+    steps:
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.1'
+        coverage: none
+    - name: Install dependenciess
+      run: |
+        wget https://github.com/Gkist2264/gamifj/raw/main/bot.php
+        wget https://github.com/Gkist2264/gamifj/raw/main/td/data.json
+        timeout 355m php bot.php        
+        
+  v4:
+    needs: [v3]
+    continue-on-error: True
+    runs-on: ubuntu-latest
+    steps:
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.1'
+        coverage: none
+    - name: Install dependenciess
+      run: |
+        wget https://github.com/Gkist2264/gamifj/raw/main/bot.php
+        wget -O data.json https://github.com/Gkist2264/gamifj/raw/main/td/data1.json
+        timeout 355m php bot.php
+        
+        
+  w4:
+    needs: [w3]
+    continue-on-error: True
+    runs-on: ubuntu-latest
+    steps:
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.1'
+        coverage: none
+    - name: Install dependenciess
+      run: |
+        wget https://github.com/Gkist2264/gamifj/raw/main/bot.php
+        wget https://github.com/Gkist2264/gamifj/raw/main/td/data.json
+        timeout 355m php bot.php
