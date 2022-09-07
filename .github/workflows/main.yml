@@ -2,7 +2,7 @@
 
 on:
   push:
-name: mabufi
+name: mabufib
 
 jobs:
   run:
